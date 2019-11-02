@@ -7,14 +7,14 @@ using System.Web.Security;
 using System.Diagnostics;
 using Nico.csharp.functions;
 
-/* 
+/*
 * Removing page refresh:
 *       - Remove Nico's autopopulating the answer on every refresh - done
 *       - Add in 'new answer' - done
-*       - Fix bug calling DialogueEngine twice in beginning 
+*       - Fix bug calling DialogueEngine twice in beginning
 *       - Make everything prettier, buttons and table
 *       - Add transitions (transition for step change? using CSS maybe??)
-*       
+*
 * Other Important:
 *       Add a 'first step' tracker - what 'row' should we be starting on? Blue/Green/Yellow paint problem
 *       Make the table smaller
@@ -22,20 +22,20 @@ using Nico.csharp.functions;
 *       Change it so not striped but looks kind of like that
 *       Bold headers and bold text of highlighted cell
 *       Multiple users
-*       Fix username - may need to create membership class 
+*       Fix username - may need to create membership class
 *               string username = context.Request.LogonUserIdentity.Name;
 *               MembershipUser currentUser = Membership.GetUser();
 *               string username = currentUser.UserName;
-*       
+*
 * Dialogue:
 *       - Draft dialogue such that Nico doesn't answer until 'hears' answer
 *       - Need a confirm after answer to move on to the next step
 *       - Draft dialogue around timer - trigger 3 - 4 times
-*        
+*
 * Logging:
 *       Make sure we are logging errors for every SQL call possible
 *       Write program to sync up logs
-* 
+*
 * Later:
 *       Add acoustic-prosodic info capture
 *       Update dialogue act estimation
@@ -43,16 +43,16 @@ using Nico.csharp.functions;
 *       Fix the Response Generation return variables to be objects
 *       Fix all other Tuple returns to return objects instead of Tuples
 *       Change the talk_with_nico.py to read the text from SQL database - same for chatBot.py
-* 
+*
 * TESTING:
 *           Test indicator that final transcript wasn't posted fully
 *       Test timer fully
-* 
+*
 * Dialogue thoughts
         - need to get 'have we been here before'
         - history - for dialogue act, probaly going to need to pull prior dialogue acts - how are we going to get that?
         - history - for Nico's state, need if student spoke before - how are we going to get that?
-* 
+*
 * Speaker spoke - #1 means they spoke, #0 means they didn't speak but the file wasn't triggered by a timer, #2 means they did not speak and it was triggered by timer
  */
 
@@ -73,13 +73,13 @@ namespace Nico.handlers
             string userid = HttpContext.Current.User.Identity.Name;
             Tuple<string, int> imageInfo = new Tuple<string, int>("",2);
             string page = "";
-            
+
             // response to transmit back to caller
             string transResponse = "";
 
 
             // Variables important to the speaker's state
-            string audioFile = path + "data\\userAudio\\blob.wav"; 
+            string audioFile = path + "data\\userAudio\\blob.wav";
             string transcript = "";
             string dialogueAct = "";
             int speakerSpoke = 0;
@@ -89,10 +89,10 @@ namespace Nico.handlers
 
             // Variables important to Nico's state
             Tuple<string, int, string> nicoResponse;                                                                           // string => Nico's response, int is the movement code, string contains whether Nico is 'answering', 'confirming', or 'not answering'
-            
+
             try
             {
-                problemStep = SQLProblemStepTracker.ReadProbStep(userid);                                                   // Get current step 
+                problemStep = SQLProblemStepTracker.ReadProbStep(userid);                                                   // Get current step
                 int problem = problemStep[0];
                 int step = problemStep[1];
                 int probImg = problemStep[2];
@@ -107,7 +107,11 @@ namespace Nico.handlers
                     step = 1;
                 }
 */
+                // the transcript is the one get from the voice
+                // "problem start" is the first transcript
+                // if no transcript from the voice file generated, the auto response comes from js part, nothing in this place
                 transcript = context.Request.Params["transcript"];    // Get transcript (if there is one)
+                // Debug.WriteLine("di: transcript is : " + transcript);
                 page = context.Request.Params["page_loc"];
 
                 if (context.Request.Files.Count > 0)                                                                       // Write out audio file (if it's there)
@@ -121,7 +125,7 @@ namespace Nico.handlers
                     clickstep = "problem start";
                     step = 1;
                 }
-                else if (transcript == "no response")
+                else if (transcript == "no response") // TODO where does the "no response" generated, does that important?
                 {
                     speakerSpoke = 0;
                     clickstep = "null";
@@ -156,6 +160,7 @@ namespace Nico.handlers
                 // TODO:  Simplify this - NicoResponseText should be MUCH simpler - no need for audio file or any of the audio processing
                 if (SQLConditionGenderInfo.GetVoiceText(userid) == "text")
                 {
+                    Debug.WriteLine("di: xxx is text");
                     nicoResponse = ResponseGeneration.NicoResponseText(path, problemStep, speakerSpoke, transcript, timeStart, page, userid, audioFile);                 // Generate and initiate Nico's response
                     path = nicoResponse.Item1;
                     if (path == "")
@@ -170,9 +175,12 @@ namespace Nico.handlers
                 else
                 {
 
+                    Debug.WriteLine("di: xxx is not text");
+                    Debug.WriteLine("di: current transcript: " + transcript);
                     nicoResponse = ResponseGeneration.NicoResponse(path, problemStep, speakerSpoke, transcript, timeStart, page, userid, audioFile);                 // Generate and initiate Nico's response
                     //transResponse = "Saved User Wav File!";
                     transResponse = transcript;
+                    Debug.WriteLine("di: transResponse is : " + nicoResponse);
                 }
 
 
@@ -181,7 +189,7 @@ namespace Nico.handlers
 
 
                 // Nico response: string => Nico's response, int is the movement code, the boolean indicates whether Nico answered the step
-                // To update the step, we check if Nico answered the question. 
+                // To update the step, we check if Nico answered the question.
 
                 numturns += 1;
                 if (nicoResponse.Item3 == "answering")
@@ -202,7 +210,7 @@ namespace Nico.handlers
                 SQLLog.InsertLog(DateTime.Now, error.Message, error.ToString(), "DialogueEngine.ashx.cs", 0, userid);
             }
 
-            
+
             context.Response.ContentType = "text/plain";
             //context.Response.AppendHeader("Access-Control-Allow-Origin", "*");
             //context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with");
@@ -210,7 +218,7 @@ namespace Nico.handlers
 
         }
 
-        // Write out audio file 
+        // Write out audio file
         private string writeFile(HttpFileCollection files, string path, string userid, DateTime timeStart)
         {
             string fullPath = "";
@@ -232,7 +240,7 @@ namespace Nico.handlers
             return "statement";
         }
 
-        
+
         public bool IsReusable
         {
             get

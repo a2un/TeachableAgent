@@ -21,7 +21,7 @@ namespace Nico.csharp.functions
         {
             List<string> problemDesign = new List<string>();
 
-            string queryString = "Select * From NicoDB.dbo.Problem_Design Where NicoDB.dbo.Problem_Design.ProblemID = @ProblemID and NicoDB.dbo.Problem_Design.Answer = @Answer AND NicoDB.dbo.Problem_Design.ProblemSet = @ProblemSet";
+            string queryString = "Select * From NicoDB2019.dbo.Problem_Design Where NicoDB2019.dbo.Problem_Design.ProblemID = @ProblemID and NicoDB2019.dbo.Problem_Design.Answer = @Answer AND NicoDB2019.dbo.Problem_Design.ProblemSet = @ProblemSet";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             try
             {

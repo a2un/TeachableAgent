@@ -17,7 +17,7 @@ namespace Nico.csharp.functions
         {
             List<string> answerInfo = new List<string>();
 
-            string queryString = "Select * From NicoDB.dbo.AnswerPatterns Where NicoDB.dbo.AnswerPatterns.AnswerPatternKey = @AnswerKey";
+            string queryString = "Select * From NicoDB2019.dbo.AnswerPatterns Where NicoDB2019.dbo.AnswerPatterns.AnswerPatternKey = @AnswerKey";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
 
             try
@@ -49,7 +49,7 @@ namespace Nico.csharp.functions
         {
             int answerkey = 0;
 
-            string queryString = "Select AnswerPatternKey From NicoDB.dbo.AnswerPatterns Where NicoDB.dbo.AnswerPatterns.AnswerPattern = @AnswerPattern";
+            string queryString = "Select AnswerPatternKey From NicoDB2019.dbo.AnswerPatterns Where NicoDB2019.dbo.AnswerPatterns.AnswerPattern = @AnswerPattern";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             try
             {

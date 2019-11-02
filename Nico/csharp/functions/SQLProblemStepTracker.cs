@@ -31,7 +31,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "UPDATE NicoDB.dbo.Problem_Step_Tracker SET ProblemID=@ProblemID, StepID = @StepID, ProblemImgKey = @ProblemImgKey, StepAnswerKey = @StepAnswerKey, NewAnswer = @NewAnswer, NumAutoResponses = @NumAutoResponses, NumTurns = @NumTurns WHERE NicoDB.dbo.Problem_Step_Tracker.UserID = @UserID and NicoDB.dbo.Problem_Step_Tracker.SessionID = @SessionID";
+                sql = "UPDATE NicoDB2019.dbo.Problem_Step_Tracker SET ProblemID=@ProblemID, StepID = @StepID, ProblemImgKey = @ProblemImgKey, StepAnswerKey = @StepAnswerKey, NewAnswer = @NewAnswer, NumAutoResponses = @NumAutoResponses, NumTurns = @NumTurns WHERE NicoDB2019.dbo.Problem_Step_Tracker.UserID = @UserID and NicoDB2019.dbo.Problem_Step_Tracker.SessionID = @SessionID";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
@@ -65,7 +65,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "UPDATE NicoDB.dbo.Problem_Step_Tracker SET NumTurns = @NumTurns WHERE NicoDB.dbo.Problem_Step_Tracker.UserID = @UserID";
+                sql = "UPDATE NicoDB2019.dbo.Problem_Step_Tracker SET NumTurns = @NumTurns WHERE NicoDB2019.dbo.Problem_Step_Tracker.UserID = @UserID";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
@@ -95,7 +95,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "Insert into NicoDB.dbo.Problem_Step_Tracker Values(UserID = @UserID, SessionID = @SessionID, ProblemID = @ProblemID, StepID = @StepID, ProblemImgKey = @ProblemImgKey, StepAnswerKey = @StepAnswerKey, NewAnswer = @NewAnswer, NumAutoResponses = @NumAutoResponses, NumTurns = @NumTurns";
+                sql = "Insert into NicoDB2019.dbo.Problem_Step_Tracker Values(UserID = @UserID, SessionID = @SessionID, ProblemID = @ProblemID, StepID = @StepID, ProblemImgKey = @ProblemImgKey, StepAnswerKey = @StepAnswerKey, NewAnswer = @NewAnswer, NumAutoResponses = @NumAutoResponses, NumTurns = @NumTurns";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
@@ -127,7 +127,7 @@ namespace Nico.csharp.functions
         {
             List<int> problemStep = new List<int>();                            
 
-            string queryString = "Select * From NicoDB.dbo.Problem_Step_Tracker Where NicoDB.dbo.Problem_Step_Tracker.UserID = @UserID";
+            string queryString = "Select * From NicoDB2019.dbo.Problem_Step_Tracker Where NicoDB2019.dbo.Problem_Step_Tracker.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             try
             {

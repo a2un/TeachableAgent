@@ -41,7 +41,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "Insert into NicoDB.dbo.Nico_State Values(@UserID, @DateTime, @SessionID, @ProblemID, @StepID, @NicoMovement, @AnswerKey, @AnsweredStep, @NicoResponse, @FilePath)";
+                sql = "Insert into NicoDB2019.dbo.Nico_State Values(@UserID, @DateTime, @SessionID, @ProblemID, @StepID, @NicoMovement, @AnswerKey, @AnsweredStep, @NicoResponse, @FilePath)";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
@@ -84,7 +84,7 @@ namespace Nico.csharp.functions
         {
             string NicoStateAnswer = "";
 
-            string queryString = "SELECT TOP 1 AnsweredStep FROM NicoDB.dbo.Nico_State ORDER BY NicoStateKey DESC";
+            string queryString = "SELECT TOP 1 AnsweredStep FROM NicoDB2019.dbo.Nico_State ORDER BY NicoStateKey DESC";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             try
             {

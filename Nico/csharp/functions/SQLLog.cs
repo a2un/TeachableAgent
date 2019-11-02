@@ -28,7 +28,7 @@ namespace Nico.csharp.functions
             string sql = null;
             connetionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             connection = new SqlConnection(connetionString);
-            sql = "Insert into NicoDB.dbo.Error_Log Values(@DateTime, @UserID, @ProblemID, @StepID, @SessionID, @ErrorCode, @ErrorMessage, @FormName, @StackTrace)";
+            sql = "Insert into NicoDB2019.dbo.Error_Log Values(@DateTime, @UserID, @ProblemID, @StepID, @SessionID, @ErrorCode, @ErrorMessage, @FormName, @StackTrace)";
             SqlCommand cmd = new SqlCommand(sql, connection);
 
             connection.Open();

@@ -26,8 +26,8 @@ namespace Nico.csharp.functions
         {
             Tuple<string, int> result = new Tuple<string, int>("",2);             // key to the filepath for this image, to be stored in the problem step tracker. Start at 2 because that's the first key in the DB
             try { 
-                string queryString = "Select * From NicoDB.dbo.Problem_Step_Img Where NicoDB.dbo.Problem_Step_Img.ProblemID = @ProblemID and NicoDB.dbo.Problem_Step_Img.StepID = @StepID " +
-                    "and NicoDB.dbo.Problem_Step_Img.CorrectnessCode = @CorrectnessCode and NicoDB.dbo.Problem_Step_Img.StepAnswerKey = @StepAnswerKey";
+                string queryString = "Select * From NicoDB2019.dbo.Problem_Step_Img Where NicoDB2019.dbo.Problem_Step_Img.ProblemID = @ProblemID and NicoDB2019.dbo.Problem_Step_Img.StepID = @StepID " +
+                    "and NicoDB2019.dbo.Problem_Step_Img.CorrectnessCode = @CorrectnessCode and NicoDB2019.dbo.Problem_Step_Img.StepAnswerKey = @StepAnswerKey";
                 string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
@@ -61,7 +61,7 @@ namespace Nico.csharp.functions
         public static Tuple<string, int> FetchImgPathByKey(int problemimgkey, string userid)
         {
             Tuple<string, int> result = new Tuple<string, int>("", 2);             // key to the filepath for this image, to be stored in the problem step tracker. Start at 2 because that's the first key in the DB
-            string queryString = "Select * From NicoDB.dbo.Problem_Step_Img Where NicoDB.dbo.Problem_Step_Img.ProblemImgKey = @ProblemImgKey";
+            string queryString = "Select * From NicoDB2019.dbo.Problem_Step_Img Where NicoDB2019.dbo.Problem_Step_Img.ProblemImgKey = @ProblemImgKey";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             try
             {

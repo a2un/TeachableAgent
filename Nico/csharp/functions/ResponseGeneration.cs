@@ -12,7 +12,7 @@ using Nico.Hubs;
 
 namespace Nico.csharp.functions
 {
-    
+
     static class Globals
     {
         public static string pythonDirectory()
@@ -20,11 +20,11 @@ namespace Nico.csharp.functions
             return "C:\\Python27\\";
         }
     }
-    
-    
+
+
     public class ResponseGeneration
     {
-   
+
 
         // Text-based function - needs to be modified
         public static Tuple<string, int, string> NicoResponseText(string path, List<int> problemStep, int speakerSpoke, string transcript, DateTime time, string page, string userID, string useraudio)
@@ -43,7 +43,7 @@ namespace Nico.csharp.functions
                 string robotIP = SQLConditionGenderInfo.GetRobotIP(userID);
                 string enttype = SQLConditionGenderInfo.GetEntrainment(userID);
 
-                // Get whether the current step has been answered and pass that along 
+                // Get whether the current step has been answered and pass that along
                 int currentstep = problemStep[1];
                 int answerKey = problemStep[3];
                 int numturns = problemStep[6];
@@ -128,7 +128,7 @@ namespace Nico.csharp.functions
 
         }
 
-        
+
         /* Voice option
          * Using speaker info, get Nico's response and instigate movement
          * Returns a tuple containing the path to the file of Nico's response, Nico's movement code, and whether Nico provided the answer to this step
@@ -149,7 +149,7 @@ namespace Nico.csharp.functions
                 string robotIP = SQLConditionGenderInfo.GetRobotIP(userID);
                 string enttype = SQLConditionGenderInfo.GetEntrainment(userID);
 
-                // Get whether the current step has been answered and pass that along 
+                // Get whether the current step has been answered and pass that along
                 int currentstep = problemStep[1];
                 int answerKey = problemStep[3];
                 int numturns = problemStep[6];
@@ -165,7 +165,7 @@ namespace Nico.csharp.functions
                         transcript = "no response";
                         response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);  // Generate Nico's response (currently just pandorbots)
                         //moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
-                        
+
                     }
                     else if (transcript == "next step")
                     {
@@ -247,14 +247,14 @@ namespace Nico.csharp.functions
 
             string pathTranscriptFile = "";
             string pathResponseFile = "";
-            string BOT = "";           
+            string BOT = "";
             string problemset = (SQLConditionGenderInfo.GetProblemSet(userid)).ToLower();
             string responseText = "";
 
            /*  CREATE BOT NAME
-            * 
+            *
                  * Pandorabots available:
-                 *      asocialemma        Corresponds to Emma Single Session Problem Set and includes social dialogue 
+                 *      asocialemma        Corresponds to Emma Single Session Problem Set and includes social dialogue
                  *      anonsocialemma     Corresponds to Emma Single Session Problem Set
                  *      emmab          Corresponds to Emma Multi Session 1
                  *      emmac               Corresponds to Emma Multi Session 1
@@ -283,7 +283,7 @@ namespace Nico.csharp.functions
             try
             {
                 // Save transcript to a file so pandora python api program can read it in; save response in a file as well
-                pathResponseFile = string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}", path + "data\\transcripts\\" + userid + "_nicoresponse", time) + ".txt";                
+                pathResponseFile = string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}", path + "data\\transcripts\\" + userid + "_nicoresponse", time) + ".txt";
                 pathTranscriptFile = string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}", path + "data\\transcripts\\" + userid + "_transcript", time) + ".txt";
                 StreamWriter transcriptFile = new StreamWriter(pathTranscriptFile);
                 transcriptFile.Write(transcript);
@@ -291,6 +291,7 @@ namespace Nico.csharp.functions
 
                 string pythonexe = Globals.pythonDirectory() + "python.exe";
                 string pythonargs = Globals.pythonDirectory() + "NaoNRIPrograms\\VerbalManager\\chatPandoraBot.py " + pathTranscriptFile + " " + pathResponseFile + " " + BOT + " " + userid;
+                Debug.WriteLine("di: the pythonargs is: " + pythonargs);
 
                 ExternalMethodsCaller.PythonProcess(pythonexe, pythonargs);
 
@@ -304,6 +305,7 @@ namespace Nico.csharp.functions
             catch (Exception error)
             {
                 // ** WRITE OUT TO DB
+                Debug.WriteLine("di: exception found here");
                 SQLLog.InsertLog(DateTime.Now, error.Message, error.StackTrace, "ResponseGeneration.generateNicoResponse", 1);
             }
 
@@ -323,7 +325,7 @@ namespace Nico.csharp.functions
                     {
 
                         ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
-                        Thread.Sleep(2000);                    
+                        Thread.Sleep(2000);
                     }
                     else
                     {
@@ -342,8 +344,8 @@ namespace Nico.csharp.functions
 
                     }
 
-                   
-                    
+
+
                 }
                 else
                 {
@@ -361,10 +363,10 @@ namespace Nico.csharp.functions
             {
                 SQLLog.InsertLog(DateTime.Now, error.Message, error.StackTrace, "ResponseGeneration.moveSpeak", 1);
             }
-            
+
         }
 
-  
+
         private static string readResponse(string path)
         {
             if (path == "")
@@ -411,6 +413,8 @@ namespace Nico.csharp.functions
                         {
                             synth.SelectVoice("Microsoft David Desktop");
                         }
+
+                        //synth.Speak(response);
 
                         if (condition == "nonsocial" || condition == "social")
                         {

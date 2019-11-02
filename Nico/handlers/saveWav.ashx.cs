@@ -14,6 +14,7 @@ namespace Nico.handlers
 
         public void ProcessRequest(HttpContext context)
         {
+            Console.WriteLine("the first log");
             string path1 = context.Request.PhysicalApplicationPath;
             string userid = HttpContext.Current.User.Identity.Name;
             using (StreamWriter ws = new StreamWriter(path1 + "data\\logs\\log_SaveWav.txt"))

@@ -33,7 +33,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "Insert into NicoDB.dbo.User_State Values(@UserID, @DateTime, @SessionID, @ProblemID, @StepID, @DialogueAct, @DialogueActConfidence, @Spoke, @StepAnswerKey, @ClickStep, @NumAutoResponses, @transcript)";
+                sql = "Insert into NicoDB2019.dbo.User_State Values(@UserID, @DateTime, @SessionID, @ProblemID, @StepID, @DialogueAct, @DialogueActConfidence, @Spoke, @StepAnswerKey, @ClickStep, @NumAutoResponses, @transcript)";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();

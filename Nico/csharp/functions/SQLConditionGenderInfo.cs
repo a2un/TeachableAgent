@@ -27,7 +27,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "UPDATE NicoDB.dbo.USERS SET Condition = @Condition, Gender = @Gender, RobotIP = @RobotIP, Entrainment = @Entrainment, ProblemSet = @ProblemSet, VoiceText = @VoiceText WHERE NicoDB.dbo.USERS.UserID = @UserID";
+                sql = "UPDATE NicoDB2019.dbo.USERS SET Condition = @Condition, Gender = @Gender, RobotIP = @RobotIP, Entrainment = @Entrainment, ProblemSet = @ProblemSet, VoiceText = @VoiceText WHERE NicoDB2019.dbo.USERS.UserID = @UserID";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
@@ -52,7 +52,7 @@ namespace Nico.csharp.functions
 
         public static string GetCondition(string userid)
         {
-            string queryString = "Select condition From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select condition From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string condition = "control";
             try
@@ -74,7 +74,7 @@ namespace Nico.csharp.functions
 
         public static string GetGender(string userid)
         {
-            string queryString = "Select gender From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select gender From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string gender = "female";
             try
@@ -96,7 +96,7 @@ namespace Nico.csharp.functions
 
         public static string GetEntrainment(string userid)
         {
-            string queryString = "Select entrainment From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select entrainment From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string enttype = "none";
             try
@@ -118,7 +118,7 @@ namespace Nico.csharp.functions
 
         public static string GetProblemSet(string userid)
         {
-            string queryString = "Select problemset From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select problemset From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string problemset = "none";
             try
@@ -140,7 +140,7 @@ namespace Nico.csharp.functions
 
         public static string GetRobotIP(string userid)
         {
-            string queryString = "Select robotIP From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select robotIP From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string robotIP = "192.168.1.8";
             try
@@ -162,7 +162,7 @@ namespace Nico.csharp.functions
 
         public static string GetVoiceText(string userid)
         {
-            string queryString = "Select voiceText From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select voiceText From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string voiceText = "text";
             try

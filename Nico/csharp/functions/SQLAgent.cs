@@ -16,7 +16,7 @@ namespace Nico.csharp.functions
 
         public static bool GetAgentSetting(string userid)
         {
-            string queryString = "Select agent From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select agent From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             bool agent = true;
             try
@@ -48,7 +48,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "UPDATE NicoDB.dbo.USERS SET agent = @agent WHERE NicoDB.dbo.USERS.UserID = @UserID";
+                sql = "UPDATE NicoDB2019.dbo.USERS SET agent = @agent WHERE NicoDB2019.dbo.USERS.UserID = @UserID";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
@@ -68,7 +68,7 @@ namespace Nico.csharp.functions
 
         public static string GetHubID(string userid)
         {
-            string queryString = "Select hubid From NicoDB.dbo.USERS Where NicoDB.dbo.USERS.UserID = @UserID";
+            string queryString = "Select hubid From NicoDB2019.dbo.USERS Where NicoDB2019.dbo.USERS.UserID = @UserID";
             string constr = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
             string hubid = "";
             try
@@ -100,7 +100,7 @@ namespace Nico.csharp.functions
                 string sql = null;
                 connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
                 connection = new SqlConnection(connectionString);
-                sql = "UPDATE NicoDB.dbo.USERS SET HUBID = @hubid WHERE NicoDB.dbo.USERS.UserID = @UserID";
+                sql = "UPDATE NicoDB2019.dbo.USERS SET HUBID = @hubid WHERE NicoDB2019.dbo.USERS.UserID = @UserID";
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
                 connection.Open();
