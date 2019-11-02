@@ -43,3 +43,12 @@ Once the application is running:
 Current open items / issues:
 * Agent Version: audio creation is too slow
 * Directory to execute python files is hard coded
+
+#Di Wu modification
+##modification
+* modified database connection information
+* add test print to trace the transcripts
+* move the chatPandoraBot.py here for reference
+* modified chatPandoraBot.py to adapte new python SDK for pandorabots
+##traced logic
+* 
