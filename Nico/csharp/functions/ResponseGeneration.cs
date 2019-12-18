@@ -58,7 +58,7 @@ namespace Nico.csharp.functions
                         //transcript = problemStep[0].ToString() + "_" + problemStep[1].ToString();
                         transcript = "no response";
                         response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);  // Generate Nico's response (currently just pandorbots)
-                        //moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
+                        moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
 
                     }
                     else if (transcript == "next step")
@@ -93,7 +93,7 @@ namespace Nico.csharp.functions
                         transcript = transcript + " " + problemStep[0].ToString();
 
                         response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);                                                                                      // Generate Nico's response (currently just pandorbots)
-                       //moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, 0, robotIP, enttype, agent);
+                       moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, 0, robotIP, enttype, agent);
                     }
                     else
                     {
@@ -105,13 +105,13 @@ namespace Nico.csharp.functions
 
                         // now generate response
                         response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);                                                                                      // Generate Nico's response (currently just pandorbots)
-                      //moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
+                      moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
                     }
                 }
                 else if (page == "HelloNico")
                 {
                     response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);                                                                                      // Generate Nico's response (currently just pandorbots)
-                   //moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
+                   moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, numturns, robotIP, enttype, agent);
                 }
                 else
                 {
@@ -229,7 +229,9 @@ namespace Nico.csharp.functions
             {
                 SQLLog.InsertLog(DateTime.Now, error.Message, error.StackTrace, "ResponseGeneration.NicoResponse", 1);
             }
-            MyHub.Start(userID, response.Item1);
+
+            //MyHub.Start(userID, response.Item1);
+
             return response;
 
         }
@@ -400,7 +402,7 @@ namespace Nico.csharp.functions
                     System.Speech.Synthesis.SpeechSynthesizer synth = new System.Speech.Synthesis.SpeechSynthesizer();
                     string gender = SQLConditionGenderInfo.GetGender(userid);
                     bool makecopy = false;
-
+                    synth.Speak("This is a test sentence");
                     if (synth != null)
                     {
 
@@ -414,7 +416,7 @@ namespace Nico.csharp.functions
                             synth.SelectVoice("Microsoft David Desktop");
                         }
 
-                        //synth.Speak(response);
+                        synth.Speak("This is a test sentence");
 
                         if (condition == "nonsocial" || condition == "social")
                         {

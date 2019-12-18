@@ -91,6 +91,7 @@
     <script src="../js/talk.js"></script>
     <script src="../js/audio.js"></script>  
     <script src="../js/download.js"></script>  
+    <script src="../js/script.js"></script>
     <script src="../js/recorder.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
@@ -214,6 +215,7 @@
             
             if (stoprecord) {
                //for (var i = 0; i < 100; i++) {
+                console.log("stopped recording" + final_transcript);
                     responseCallNico(final_transcript);
                 //}
             }
@@ -222,6 +224,7 @@
 
         // event listener for when recognition ends
         recognition.onend = function () {
+            console.log("recognition onend called");
             writeLog("recognition onend called");
             recognizing = false;
             if (ignore_onend) {
@@ -243,7 +246,7 @@
         function startRecording() {
             recorder && recorder.record();
             __log('Calling START record');
-
+            console.log("Calling start recording");
             writeLog("Calling start recording");
 
             // reset ASR variables
@@ -269,7 +272,7 @@
                 responseCallNico(final_transcript);
                 stoprecord = false;
             }
-            
+            console.log("called stop recording");
             writeLog("called stop recording");
             createDownloadLink(sendBlob);
             recorder.clear();
@@ -314,6 +317,7 @@
                 __log("Calling SAVE");
                 //$("#thinking").css("display", "block");
                 var audioname = new Date().toISOString() + '.wav';
+                console.debug(audioname);
                 download(new Blob(  [blob]), audioname, "audio/wav");
                 /*
                 //$.ajax({
@@ -347,6 +351,7 @@
         
         function responseCallNico(text) {
             clearTimeout(timer);
+            console.log('response call Nico', 'arun');
             var data = new FormData();
             data.append('transcript', text);
             data.append('page_loc', 'ProblemPage');
@@ -358,11 +363,15 @@
                 data: data,
                 contentType: false,
                 processData: false,
-                success: function () {
+                success: function (response) {
                     window.clearTimeout(timer);
+                    //console.log("from server ", response);
+                    //talk("this is test success");
                     timer = window.setTimeout(function () { responseCallNico("no response"); }, 65000);
                 },
-                complete: function () {
+                complete: function (response) {
+                    console.log("from server ", response);
+                    talk(response.responseText);
                     updateTable();
                     $("#thinking").css("display", "none");
                 },
@@ -815,25 +824,25 @@
             });
         }
 
-        function talk(message) {
-            var msg = new SpeechSynthesisUtterance(message)
-            var voices = window.speechSynthesis.getVoices()
-            msg.voice = voices[1]
-            for (i = 0; i < voices.length; i++) {
-                if (voices[i].default) {
-                msg.voice = voices[i];
-              }
-            }
+        //function talk(message) {
+        //    var msg = new SpeechSynthesisUtterance();
+        //    var voices = window.speechSynthesis.getVoices();
+        //    msg.voice = voices[1];
+        //    for (i = 0; i < voices.length; i++) {
+        //        if (voices[i].default) {
+        //        msg.voice = voices[i];
+        //      }
+        //    }
 
-               for (i = 0; i < voices.length; i++) {
-                if ("en-US"==voices[i].lang) {
-                msg.voice = voices[i];
-              }
-            }
+        //       for (i = 0; i < voices.length; i++) {
+        //        if ("en-US"==voices[i].lang) {
+        //        msg.voice = voices[i];
+        //      }
+        //    }
 
-            window.speechSynthesis.speak(msg);
+        //    window.speechSynthesis.speak(msg);
 
-         }
+         //}
 
     </script>
 

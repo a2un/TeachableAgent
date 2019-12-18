@@ -1,0 +1,1 @@
+python C:\\Python27\\NaoNRIPrograms\\VerbalManager\\chatPandoraBot.py C:\\Users\\encodedgeek\\TeachableAgent\\Nico\\data\\transcripts\\shang_transcript-2019-12-06_09-56-47-AM.txt C:\\Users\\encodedgeek\\TeachableAgent\\Nico\\data\\transcripts\\shang_nicoresponse-2019-12-06_09-56-47-AM.txt anonsocialemma shang

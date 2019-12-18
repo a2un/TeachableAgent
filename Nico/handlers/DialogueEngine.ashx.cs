@@ -88,7 +88,7 @@ namespace Nico.handlers
             int nextstepanswerkey = 0;
 
             // Variables important to Nico's state
-            Tuple<string, int, string> nicoResponse;                                                                           // string => Nico's response, int is the movement code, string contains whether Nico is 'answering', 'confirming', or 'not answering'
+            Tuple<string, int, string> nicoResponse = new Tuple<string, int, string>("",1,"no answer");                                                                           // string => Nico's response, int is the movement code, string contains whether Nico is 'answering', 'confirming', or 'not answering'
 
             try
             {
@@ -214,8 +214,8 @@ namespace Nico.handlers
             context.Response.ContentType = "text/plain";
             //context.Response.AppendHeader("Access-Control-Allow-Origin", "*");
             //context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with");
-            context.Response.Write(transResponse);
-
+            //context.Response.Write(transResponse);
+            context.Response.Write(nicoResponse.Item1);
         }
 
         // Write out audio file

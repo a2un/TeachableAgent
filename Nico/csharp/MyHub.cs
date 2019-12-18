@@ -16,11 +16,10 @@ namespace Nico.Hubs
            new ConnectionMapping<string>();
 
         private static IHubContext hubContext = GlobalHost.ConnectionManager.GetHubContext<MyHub>();
-
+        
         public static void Start(string userId, string responseTxt)
         {
                                
-
            //string name = Context.User.Identity.Name;
             /*
             if (hubContext != null)
@@ -32,7 +31,7 @@ namespace Nico.Hubs
             if (hubContext != null)
             { 
                 foreach (var connectionId in _connections.GetConnections(userId))
-                {
+                {   
                     hubContext.Clients.Client(connectionId).playSpeech(responseTxt);
                 }
             }
