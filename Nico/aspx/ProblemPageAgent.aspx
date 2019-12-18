@@ -370,7 +370,7 @@
                     timer = window.setTimeout(function () { responseCallNico("no response"); }, 65000);
                 },
                 complete: function (response) {
-                    console.log("from server ", response);
+                    //console.log("from server ", response);
                     talk(response.responseText);
                     updateTable();
                     $("#thinking").css("display", "none");

@@ -77,7 +77,7 @@ inputForm.onsubmit = function(event) {
 function talk(message) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[3];
+    msg.voice = voices[0];
     console.log(voices);
     msg.text = message;
     window.speechSynthesis.speak(msg);

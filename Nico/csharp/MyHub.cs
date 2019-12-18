@@ -32,7 +32,7 @@ namespace Nico.Hubs
             { 
                 foreach (var connectionId in _connections.GetConnections(userId))
                 {   
-                    hubContext.Clients.Client(connectionId).playSpeech(responseTxt);
+                    //hubContext.Clients.Client(connectionId).playSpeech(responseTxt);
                 }
             }
         }

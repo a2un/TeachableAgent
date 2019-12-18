@@ -3,3 +3,7 @@
 ._Nao*
 NaoNRIPrograms
 .vscode
+/Nico/bin/
+/Nico/obj/
+*.dll
+*.pdb
