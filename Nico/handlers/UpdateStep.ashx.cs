@@ -91,7 +91,7 @@ namespace Nico.handlers
                         }
                         else
                         {
-                            step = 1;
+                            step = 0;
                             answerKey = 1;
                             newanswer = 0;
                             problemStep[0] = nextproblem;

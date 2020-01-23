@@ -198,7 +198,7 @@ namespace Nico.csharp.functions
                     {
                         transcript = transcript + " " + problemStep[0].ToString();
 
-                        response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);                                                                                      // Generate Nico's response (currently just pandorbots)
+                            response = dialogueManager(userID, path, problemStep, speakerSpoke, transcript, time, checkIfAnswered, condition);                                                                                      // Generate Nico's response (currently just pandorbots)
                         //moveSpeak(path, response.Item1, response.Item2, verbalManagerFile, useraudio, condition, userID, time, 0, robotIP, enttype, agent);
                     }
                     else
@@ -277,6 +277,10 @@ namespace Nico.csharp.functions
                 if (condition.Contains("nonsocial")) { BOT = problemset + "nonsocialnico"; }
                 else { BOT = problemset + "socialnico"; }
             }
+            else if (problemset == "h")
+            {
+                BOT = "cobi";
+            }
             else
             {
                 BOT = "emma" + problemset;
@@ -287,7 +291,8 @@ namespace Nico.csharp.functions
                 // Save transcript to a file so pandora python api program can read it in; save response in a file as well
                 pathResponseFile = string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}", path + "data\\transcripts\\" + userid + "_nicoresponse", time) + ".txt";
                 pathTranscriptFile = string.Format("{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}", path + "data\\transcripts\\" + userid + "_transcript", time) + ".txt";
-                StreamWriter transcriptFile = new StreamWriter(pathTranscriptFile);
+                FileStream stream = new FileStream(pathTranscriptFile, FileMode.CreateNew);
+                StreamWriter transcriptFile = new StreamWriter(stream);
                 transcriptFile.Write(transcript);
                 transcriptFile.Close();
 

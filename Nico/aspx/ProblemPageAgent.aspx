@@ -351,7 +351,7 @@
         
         function responseCallNico(text) {
             clearTimeout(timer);
-            console.log('response call Nico', 'arun');
+            console.log('response call Nico', 'arun',text);
             var data = new FormData();
             data.append('transcript', text);
             data.append('page_loc', 'ProblemPage');
@@ -396,6 +396,7 @@
                 $.getJSON("../handlers/UpdateTable.ashx", function (data) {
 
                     // Extract variables from first row
+                    console.log("text arun", data);
                     var numCols = data[0]["Col1"];
                     var step = data[0]["Col2"];
                     var maxSteps = data[0]["Col3"];
@@ -555,8 +556,9 @@
                         document.getElementById("nextStepText").style.visibility = "visible";
                         document.getElementById("NextProblem").style.visibility = "hidden";      // hidden
                     }
-
+                    console.log('outside problem start arun', step);
                     if (parseInt(step, 10) == 0) {
+                        console.log('inside problem start arun', step);
                         responseCallNico("problem start");
                     }
                    
@@ -568,6 +570,7 @@
         function PriorStep_Click() {
             clearTimeout(timer);
             __log("prior step button clicked");
+            console.log("prior step button clicked");
             var data = new FormData();
             var clicked = "prior";
             data.append('button_info', clicked);
@@ -601,6 +604,7 @@
         function NextStep_Click() {
             clearTimeout(timer);
             __log("next step button clicked");
+            console.log("next step button clicked");
             var data = new FormData();
             var clicked = "next";
             data.append('button_info', clicked);
@@ -620,6 +624,7 @@
                 contentType: false,
                 processData: false,
                 success: function (endSession) {
+                    console.log("arun: Next Step", endSession);
                     updateTable(endSession);
                     window.clearTimeout(timer);
                     timer = window.setTimeout(function () { responseCallNico("no response"); }, 65000);
@@ -635,6 +640,7 @@
             clearTimeout(timer);
             evt.preventDefault();
             __log("prior step button clicked");
+            console.log("prior step button clicked");
             var data = new FormData();
             var clicked = "prior";
             data.append('button_info', clicked);
@@ -669,6 +675,7 @@
             clearTimeout(timer);
             evt.preventDefault();
             __log("next step button clicked");
+            console.log("next step button clicked");
             var data = new FormData();
             var clicked = "next";
             data.append('button_info', clicked);
@@ -702,6 +709,7 @@
         function Next_Problem() {
             clearTimeout(timer);
             __log("new problem button clicked");
+            
             var data = new FormData();
             var clicked = "problem";
             data.append('button_info', clicked);
@@ -721,6 +729,7 @@
                 contentType: false,
                 processData: false,
                 success: function (endSession) {
+                    console.log("next problem arun", endSession);
                     updateTable(endSession);
                     window.clearTimeout(timer);
                     timer = window.setTimeout(function () { responseCallNico("no response"); }, 65000);
@@ -737,6 +746,7 @@
 
         // Window loading initializations
         window.onload = function init() {
+            var hasspoken=false //Prathamesh
             var touchzone = document.getElementById('touchzone');
             //touchzone.addEventListener("touchstart", touchHandlerDown, false);
             //touchzone.addEventListener("touchend", touchHandlerUp, false);
@@ -825,7 +835,7 @@
         }
 
         //function talk(message) {
-        //    var msg = new SpeechSynthesisUtterance();
+        //    var msg = new SpeechSynthesisUtterance();()
         //    var voices = window.speechSynthesis.getVoices();
         //    msg.voice = voices[1];
         //    for (i = 0; i < voices.length; i++) {

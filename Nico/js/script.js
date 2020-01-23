@@ -77,8 +77,13 @@ inputForm.onsubmit = function(event) {
 function talk(message) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[0];
-    console.log(voices);
+    msg.voiceURI = 'native';
+    //msg.volume = 15;
+    msg.rate = 1.25;
+    //msg.pitch = 2;
+    msg.lang = 'en-US';
+    msg.voice = voices[3];
+    console.log('arun',voices);
     msg.text = message;
     window.speechSynthesis.speak(msg);
 }
