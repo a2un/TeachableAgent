@@ -211,9 +211,9 @@
                 }
             }
 
-            if (final_transcript.length > 10) {
-                hasspoken = true //Prathamesh
-            }
+            //if (final_transcript.length > 10) {
+            hasspoken = true; //Prathamesh
+            //}
            
 
 
@@ -451,7 +451,7 @@
                     }
 
                     //Added snippet to check if user has actually spoken before going to the next question
-                    if ((step == maxSteps)) {
+                    if ((step == maxSteps) && hasspoken) {
                         //console.log("Prathamesh in recognition.onresult()")
                         document.getElementById("NextProblem").style.visibility = "visible";      // visible //Prathamesh
 
@@ -666,7 +666,7 @@
         }
 
         function PriorStep_Touch(evt) {
-            hasspoken = false
+            hasspoken = true;
             clearTimeout(timer);
             evt.preventDefault();
             __log("prior step button clicked");
@@ -702,7 +702,7 @@
         }
 
         function NextStep_Touch(evt) {
-            hasspoken = false
+            hasspoken = true;
             clearTimeout(timer);
             evt.preventDefault();
             __log("next step button clicked");
@@ -738,7 +738,7 @@
         }
 
         function Next_Problem() {
-            hasspoken = false //Prathamesh
+            hasspoken = true; //Prathamesh
             alert("Good Job! Continue helping me solve problems") //1. change it to overlay/modal 
             clearTimeout(timer);
             __log("new problem button clicked");
@@ -779,7 +779,7 @@
 
         // Window loading initializations
         window.onload = function init() {
-            hasspoken = false //Prathamesh
+            hasspoken = true; //Prathamesh
             var touchzone = document.getElementById('touchzone');
             //touchzone.addEventListener("touchstart", touchHandlerDown, false);
             //touchzone.addEventListener("touchend", touchHandlerUp, false);
