@@ -550,7 +550,6 @@ C:\Users\encodedgeek\TeachableAgent\Nico\bin\System.Web.Razor.xml
 C:\Users\encodedgeek\TeachableAgent\Nico\bin\System.Web.WebPages.xml
 C:\Users\encodedgeek\TeachableAgent\Nico\bin\System.Web.WebPages.Deployment.xml
 C:\Users\encodedgeek\TeachableAgent\Nico\bin\System.Web.WebPages.Razor.xml
-C:\Users\encodedgeek\TeachableAgent\Nico\obj\Debug\Nico.csproj.CoreCompileInputs.cache
 C:\Users\encodedgeek\TeachableAgent\Nico\obj\Debug\Nico.csproj.CopyComplete
 C:\Users\encodedgeek\TeachableAgent\Nico\obj\Debug\Nico.dll
 C:\Users\encodedgeek\TeachableAgent\Nico\obj\Debug\Nico.pdb

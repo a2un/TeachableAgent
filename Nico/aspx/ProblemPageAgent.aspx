@@ -451,7 +451,7 @@
                     }
 
                     //Added snippet to check if user has actually spoken before going to the next question
-                    if ((step == maxSteps) && hasspoken) {
+                    if ((step == maxSteps)) {
                         //console.log("Prathamesh in recognition.onresult()")
                         document.getElementById("NextProblem").style.visibility = "visible";      // visible //Prathamesh
 
