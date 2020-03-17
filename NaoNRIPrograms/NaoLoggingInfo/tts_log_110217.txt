@@ -1,0 +1,347 @@
+nlubold,110117,audio save worked
+,nlubold,110117,get pitch worked
+,nlubold,110117,UserMean, 188.718703307, NicoMean, 249.211460737, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117,pitch adjust worked
+,nlubold,110117,audio save worked
+,nlubold,110117,get pitch worked
+,nlubold,110117,UserMean, 188.718703307, NicoMean, 250.285278646, targetPitch, 203.718703307, pitchAdj, 1.0
+,nlubold,110117,pitch adjust worked
+,nlubold,110117,move and speak worked
+,nlubold,110117,audio save worked
+,nlubold,110117,get pitch worked
+,nlubold,110117,UserMean, 186.578752648, NicoMean, 255.814310683, targetPitch, 201.578752648, pitchAdj, 1.0
+,nlubold,110117,pitch adjust worked
+,nlubold,110117,move and speak worked
+,nlubold,110117,audio save worked
+,nlubold,110117,get pitch worked
+,nlubold,110117,UserMean, 169.241796576, NicoMean, 262.979096506, targetPitch, 187.979096506, pitchAdj, 1.0
+,nlubold,110117,pitch adjust worked
+,nlubold,110117,audio save worked
+,nlubold,110117,get pitch worked
+,nlubold,110117,UserMean, 164.526417941, NicoMean, 262.990481404, targetPitch, 187.990481404, pitchAdj, 1.0
+,nlubold,110117,pitch adjust worked
+,nlubold,110117_1,audio save worked
+,nlubold,110117_1,get pitch worked
+,nlubold,110117_1,UserMean, 188.718703307, NicoMean, 249.279083192, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_1,pitch adjust worked
+,nlubold,110117_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_1,pitch adjust returned
+,nlubold,110117_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_1,pitch adjust returned
+,nlubold,110117_1,move and speak returned
+,nlubold,110117_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_1,pitch adjust returned
+,nlubold,110117_1,move and speak returned
+,nlubold,110117_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_1,pitch adjust returned
+,nlubold,110117_1,move and speak returned
+,nlubold,110117_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_1,pitch adjust returned
+,nlubold,110117_1,move and speak returned
+,nlubold,110117_2,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_2,pitch adjust returned
+,nlubold,110117_2,move and speak returned
+,nlubold,110117_3,UserMean, 180.974445083, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_3,pitch adjust returned
+,nlubold,110117_3,move and speak returned
+,nlubold,110117_4,UserMean, 168.414025761, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_4,pitch adjust returned
+,nlubold,110117_5,UserMean, 165.073784641, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_5,pitch adjust returned
+,nlubold,110117_4,UserMean, 168.414025761, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_4,pitch adjust returned
+,nlubold,110117_lower_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.0
+,nlubold,110117_lower_1,pitch adjust returned
+,nlubold,110117_lower_1,move and speak returned
+,nlubold,110117_lower_2,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.0
+,nlubold,110117_lower_2,pitch adjust returned
+,nlubold,110117_lower_2,move and speak returned
+,nlubold,110117_lower_3,UserMean, 180.974445083, NicoMean, 259, targetPitch, 0, pitchAdj, 1.0
+,nlubold,110117_lower_3,pitch adjust returned
+,nlubold,110117_lower_3,move and speak returned
+,nlubold,110117_lower_4,UserMean, 168.414025761, NicoMean, 259, targetPitch, 0, pitchAdj, 1.0
+,nlubold,110117_lower_4,pitch adjust returned
+,nlubold,110117_lower_5,UserMean, 165.073784641, NicoMean, 259, targetPitch, 0, pitchAdj, 1.0
+,nlubold,110117_lower_5,pitch adjust returned
+,nlubold,110117_lower_5,move and speak returned
+,nlubold,110117_entrain_lower_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.0
+,nlubold,110117_entrain_lower_1,pitch adjust returned
+,nlubold,110117_entrain_lower_1,move and speak returned
+,nlubold,110117_entrain_lower_2,UserMean, 184.605022683, NicoMean, 259, targetPitch, 209.605022683, pitchAdj, 1.0
+,nlubold,110117_entrain_lower_2,pitch adjust returned
+,nlubold,110117_entrain_lower_2,move and speak returned
+,nlubold,110117_entrain_lower_3,UserMean, 180.974445083, NicoMean, 259, targetPitch, 205.974445083, pitchAdj, 1.0
+,nlubold,110117_entrain_lower_3,pitch adjust returned
+,nlubold,110117_entrain_lower_3,move and speak returned
+,nlubold,110117_entrain_lower_4,UserMean, 168.414025761, NicoMean, 259, targetPitch, 184, pitchAdj, 1.0
+,nlubold,110117_entrain_lower_4,pitch adjust returned
+,nlubold,110117_entrain_lower_4,move and speak returned
+,nlubold,110117_entrain_lower_5,UserMean, 165.073784641, NicoMean, 259, targetPitch, 184, pitchAdj, 1.0
+,nlubold,110117_entrain_lower_5,pitch adjust returned
+,nlubold,110117_entrain_lower_5,move and speak returned
+,nlubold,110117_entrain_higher_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_entrain_higher_1,pitch adjust returned
+,nlubold,110117_entrain_higher_1,move and speak returned
+,nlubold,110117_entrain_higher_2,UserMean, 184.605022683, NicoMean, 259, targetPitch, 209.605022683, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_2,pitch adjust returned
+,nlubold,110117_entrain_higher_2,move and speak returned
+,nlubold,110117_entrain_higher_3,UserMean, 180.974445083, NicoMean, 259, targetPitch, 205.974445083, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_3,pitch adjust returned
+,nlubold,110117_entrain_higher_3,move and speak returned
+,nlubold,110117_entrain_higher_4,UserMean, 168.414025761, NicoMean, 259, targetPitch, 184, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_4,pitch adjust returned
+,nlubold,110117_entrain_higher_4,move and speak returned
+,nlubold,110117_entrain_higher_5,UserMean, 165.073784641, NicoMean, 259, targetPitch, 184, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_5,pitch adjust returned
+,nlubold,110117_entrain_higher_5,move and speak returned
+,nlubold,110117_entrain_middle_1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,110117_entrain_middle_1,pitch adjust returned
+,nlubold,110117_entrain_middle_1,move and speak returned
+,nlubold,110117_entrain_middle_2,UserMean, 184.605022683, NicoMean, 259, targetPitch, 209.605022683, pitchAdj, 1.0
+,nlubold,110117_entrain_middle_2,pitch adjust returned
+,nlubold,110117_entrain_middle_2,move and speak returned
+,nlubold,110117_entrain_middle_3,UserMean, 180.974445083, NicoMean, 259, targetPitch, 205.974445083, pitchAdj, 1.0
+,nlubold,110117_entrain_middle_3,pitch adjust returned
+,nlubold,110117_entrain_middle_3,move and speak returned
+,nlubold,110117_entrain_middle_4,UserMean, 168.414025761, NicoMean, 259, targetPitch, 184, pitchAdj, 1.0
+,nlubold,110117_entrain_middle_4,pitch adjust returned
+,nlubold,110117_entrain_middle_4,move and speak returned
+,nlubold,110117_entrain_middle_5,UserMean, 165.073784641, NicoMean, 259, targetPitch, 184, pitchAdj, 1.0
+,nlubold,110117_entrain_middle_5,pitch adjust returned
+,nlubold,110117_entrain_middle_5,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,UserMean, 184.605022683, NicoMean, 259, targetPitch, 0, pitchAdj, 1.1
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 249.222454427, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 250.242647548, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 242.140044441, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 261.910747901, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 249.230518048, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 250.330656813, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 242.085702968, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 261.912021481, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 249.297271359, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 250.345619326, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 242.067019799, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 255.926319119, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 255.923168739, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 243.001424088, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 188.718703307, NicoMean, 261.891816086, targetPitch, 0, pitchAdj, 1.2
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,110117_entrain_higher,audio save worked
+,nlubold,110117_entrain_higher,get pitch returned
+,nlubold,110117_entrain_higher,UserMean, 188.718703307, NicoMean, 249.276120025, targetPitch, 0, pitchAdj, 1.2
+,nlubold,110117_entrain_higher,pitch adjust returned
+,nlubold,110117_entrain_higher,move and speak returned
+,nlubold,110117_entrain_higher_1,audio save worked
+,nlubold,110117_entrain_higher_1,get pitch returned
+,nlubold,110117_entrain_higher_1,UserMean, 188.718703307, NicoMean, 250.242415504, targetPitch, 213.718703307, pitchAdj, 1.02
+,nlubold,110117_entrain_higher_1,pitch adjust returned
+,nlubold,110117_entrain_higher_1,move and speak returned
+,nlubold,110117_entrain_higher_2,audio save worked
+,nlubold,110117_entrain_higher_2,get pitch returned
+,nlubold,110117_entrain_higher_2,UserMean, 186.578752648, NicoMean, 257.89432865, targetPitch, 211.578752648, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_2,pitch adjust returned
+,nlubold,110117_entrain_higher_2,move and speak returned
+,nlubold,110117_entrain_higher_3,audio save worked
+,nlubold,110117_entrain_higher_3,get pitch returned
+,nlubold,110117_entrain_higher_3,UserMean, 169.241796576, NicoMean, 242.577049646, targetPitch, 184.241796576, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_3,pitch adjust returned
+,nlubold,110117_entrain_higher_3,move and speak returned
+,nlubold,110117_entrain_higher_4,audio save worked
+,nlubold,110117_entrain_higher_4,get pitch returned
+,nlubold,110117_entrain_higher_4,UserMean, 164.526417941, NicoMean, 261.913481337, targetPitch, 186.913481337, pitchAdj, 1.0
+,nlubold,110117_entrain_higher_4,pitch adjust returned
+,nlubold,110117_entrain_higher_4,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 164.526417941, NicoMean, 255.864074628, targetPitch, 189.526417941, pitchAdj, 1.0
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,test1,audio save worked
+,nlubold,test1,get pitch returned
+,nlubold,test1,UserMean, 164.526417941, NicoMean, 256.853406299, targetPitch, 189.526417941, pitchAdj, 1.0
+,nlubold,test1,pitch adjust returned
+,nlubold,test1,move and speak returned
+,nlubold,entrain_lower_0,UserMean, 184.605022683, NicoMean, 215, targetPitch, 0, pitchAdj, 1.0
+,nlubold,entrain_lower_0,pitch adjust returned
+,nlubold,entrain_lower_0,move and speak returned
+,nlubold,entrain_lower_1,UserMean, 184.605022683, NicoMean, 215, targetPitch, 209.605022683, pitchAdj, 1.0
+,nlubold,entrain_lower_1,pitch adjust returned
+,nlubold,entrain_lower_1,move and speak returned
+,nlubold,entrain_lower_2,UserMean, 180.974445083, NicoMean, 215, targetPitch, 205.974445083, pitchAdj, 1.0
+,nlubold,entrain_lower_2,pitch adjust returned
+,nlubold,entrain_lower_2,move and speak returned
+,nlubold,entrain_lower_3,UserMean, 168.414025761, NicoMean, 215, targetPitch, 183.414025761, pitchAdj, 1.0
+,nlubold,entrain_lower_3,pitch adjust returned
+,nlubold,entrain_lower_3,move and speak returned
+,nlubold,entrain_lower_4,UserMean, 165.073784641, NicoMean, 215, targetPitch, 170.073784641, pitchAdj, 1.0
+,nlubold,entrain_lower_4,pitch adjust returned
+,nlubold,entrain_lower_4,move and speak returned
+,nlubold,entrain_lower_4,UserMean, 165.073784641, NicoMean, 215, targetPitch, 170.073784641, pitchAdj, 1.0
+,nlubold,entrain_lower_4,pitch adjust returned
+,nlubold,entrain_lower_4,move and speak returned
+,nlubold,entrain_lower_4,UserMean, 165.073784641, NicoMean, 215, targetPitch, 170.073784641, pitchAdj, 1.0
+,nlubold,entrain_lower_4,pitch adjust returned
+,nlubold,entrain_lower_4,move and speak returned
+,nlubold,entrain_middle_0,UserMean, 184.605022683, NicoMean, 230, targetPitch, 0, pitchAdj, 1.1
+,nlubold,entrain_middle_0,pitch adjust returned
+,nlubold,entrain_middle_0,move and speak returned
+,nlubold,entrain_middle_1,UserMean, 184.605022683, NicoMean, 230, targetPitch, 209.605022683, pitchAdj, 1.0
+,nlubold,entrain_middle_1,pitch adjust returned
+,nlubold,entrain_middle_1,move and speak returned
+,nlubold,entrain_middle_2,UserMean, 180.974445083, NicoMean, 230, targetPitch, 205.974445083, pitchAdj, 1.0
+,nlubold,entrain_middle_2,pitch adjust returned
+,nlubold,entrain_middle_2,move and speak returned
+,nlubold,entrain_middle_3,UserMean, 168.414025761, NicoMean, 230, targetPitch, 183.414025761, pitchAdj, 1.0
+,nlubold,entrain_middle_3,pitch adjust returned
+,nlubold,entrain_middle_3,move and speak returned
+,nlubold,entrain_middle_4,UserMean, 165.073784641, NicoMean, 230, targetPitch, 180, pitchAdj, 1.0
+,nlubold,entrain_middle_4,pitch adjust returned
+,nlubold,entrain_middle_4,move and speak returned
+,nlubold,entrain_middle_5,UserMean, 157.518199229, NicoMean, 230, targetPitch, 180, pitchAdj, 1.0
+,nlubold,entrain_middle_5,pitch adjust returned
+,nlubold,entrain_middle_0,UserMean, 184.605022683, NicoMean, 230, targetPitch, 234.605022683, pitchAdj, 1.22
+,nlubold,entrain_middle_0,pitch adjust returned
+,nlubold,entrain_middle_0,move and speak returned
+,nlubold,entrain_middle_0,UserMean, 184.605022683, NicoMean, 230, targetPitch, 234.605022683, pitchAdj, 1.22
+,nlubold,entrain_middle_0,pitch adjust returned
+,nlubold,entrain_middle_0,move and speak returned
+,nlubold,entrain_middle_0,UserMean, 184.605022683, NicoMean, 230, targetPitch, 234.605022683, pitchAdj, 1.22
+,nlubold,entrain_middle_0,pitch adjust returned
+,nlubold,entrain_middle_0,move and speak returned
+,nlubold,2017-11-01_03-15-59-PM,UserMean, 219.519086196, NicoMean, 230, targetPitch, 244.519086196, pitchAdj, 1.28
+,nlubold,2017-11-01_03-15-59-PM,pitch adjust returned
+,nlubold,2017-11-01_03-16-47-PM,UserMean, 219.519086196, NicoMean, 230, targetPitch, 234.519086196, pitchAdj, 1.22
+,nlubold,2017-11-01_03-16-47-PM,pitch adjust returned
+,nlubold,2017-11-01_03-18-26-PM,UserMean, 219.519086196, NicoMean, 230, targetPitch, 234.519086196, pitchAdj, 1.22
+,nlubold,2017-11-01_03-18-26-PM,pitch adjust returned
+,nlubold,2017-11-01_03-19-09-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 207.033314863, pitchAdj, 1.08
+,nlubold,2017-11-01_03-19-09-PM,pitch adjust returned
+,nlubold,2017-11-01_03-35-23-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 212.033314863, pitchAdj, 1.11
+,nlubold,2017-11-01_03-35-23-PM,pitch adjust returned
+,nlubold,2017-11-01_03-35-36-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 212.033314863, pitchAdj, 1.11
+,nlubold,2017-11-01_03-35-36-PM,pitch adjust returned
+,nlubold,2017-11-01_04-15-01-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 212.033314863, pitchAdj, 1.11
+,nlubold,2017-11-01_04-15-01-PM,pitch adjust returned
+,nlubold,2017-11-01_04-14-12-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 212.033314863, pitchAdj, 1.11
+,nlubold,2017-11-01_04-14-12-PM,pitch adjust returned
+,nlubold,2017-11-01_04-15-01-PM,move and speak returned
+,nlubold,2017-11-01_04-14-12-PM,move and speak returned
+,nlubold,2017-11-01_04-16-37-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 212.033314863, pitchAdj, 1.11
+,nlubold,2017-11-01_04-16-37-PM,pitch adjust returned
+,nlubold,2017-11-01_04-16-37-PM,move and speak returned
+,nlubold,2017-11-01_04-17-25-PM,UserMean, 197.033314863, NicoMean, 230, targetPitch, 207.033314863, pitchAdj, 1.08
+,nlubold,2017-11-01_04-17-25-PM,pitch adjust returned
+,nlubold,2017-11-01_04-17-25-PM,move and speak returned
+,nlubold,2017-11-01_04-25-58-PM,UserMean, 218.872719682, NicoMean, 230, targetPitch, 243.872719682, pitchAdj, 1.27
+,nlubold,2017-11-01_04-25-58-PM,pitch adjust returned
+,nlubold,2017-11-01_04-25-58-PM,move and speak returned
+,nlubold,2017-11-01_04-26-08-PM,UserMean, 203.143960342, NicoMean, 230, targetPitch, 218.143960342, pitchAdj, 1.14
+,nlubold,2017-11-01_04-26-08-PM,pitch adjust returned
+,nlubold,2017-11-01_04-26-08-PM,move and speak returned
+,nlubold,2017-11-01_04-27-22-PM,UserMean, 203.143960342, NicoMean, 230, targetPitch, 218.143960342, pitchAdj, 1.14
+,nlubold,2017-11-01_04-27-22-PM,pitch adjust returned
+,nlubold,2017-11-01_04-27-22-PM,move and speak returned
+,nlubold,2017-11-01_04-30-55-PM,UserMean, 203.143960342, NicoMean, 230, targetPitch, 230, pitchAdj, 1.2
+,nlubold,2017-11-01_04-30-55-PM,pitch adjust returned
+,nlubold,2017-11-01_04-30-55-PM,move and speak returned
+,nlubold,2017-11-01_04-30-55-PM,UserMean, 203.143960342, NicoMean, 230, targetPitch, 230, pitchAdj, 1.2
+,nlubold,2017-11-01_04-30-55-PM,pitch adjust returned
+,nlubold,2017-11-01_04-30-55-PM,move and speak returned
+,nlubold,2017-11-01_04-37-55-PM,UserMean, 203.143960342, NicoMean, 230, targetPitch, 230, pitchAdj, 1.2
+,nlubold,2017-11-01_04-37-55-PM,pitch adjust returned
+,nlubold,2017-11-01_04-37-55-PM,move and speak returned
+,nlubold,2017-11-01_04-38-13-PM,UserMean, 240.399164578, NicoMean, 230, targetPitch, 215.399164578, pitchAdj, 1.12
+,nlubold,2017-11-01_04-38-13-PM,pitch adjust returned
+,nlubold,2017-11-01_04-38-13-PM,move and speak returned
+,

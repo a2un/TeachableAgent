@@ -1,0 +1,1 @@
+C:\Python27\NaoNRIPrograms\VerbalManager>python nonVerbalManager.py nlubold 110117_2 C:\Python27\NaoNRIPrograms\AMT_Data\user_turn_1.wav C:\Python27\NaoNRIPrograms\AMT_Data\nico_turn_1.txt entrain 1

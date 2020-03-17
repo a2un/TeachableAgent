@@ -1,0 +1,1 @@
+-a C:\Python27\NaoNRIPrograms\plugin_VocalToolkit\Nico_getPitch.praat C:\Users\nikki\Dropbox\misc\Research\NRIProject\PitchAdaptation\transcript.mp3

@@ -376,14 +376,23 @@ namespace Nico.csharp.functions
 
         private static string readResponse(string path)
         {
-            if (path == "")
+            try
             {
-                return "empty transcript";
+                if (path == "")
+                {
+                    return "empty transcript";
+                }
+                else
+                {
+                    return File.ReadAllText(path);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                return File.ReadAllText(path);
+                Debug.WriteLine("di: exception found in readResponse");
+                throw ex;// Prathamesh-needs to be fixed
             }
+            
         }
 
         private static string generateSpeech(string userid, string condition, string pathResponseFile, string path)

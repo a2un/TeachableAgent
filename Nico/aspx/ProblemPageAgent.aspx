@@ -210,13 +210,20 @@
                     final_transcript += event.results[i][0].transcript;
                 }
             }
+
+            if (final_transcript.length > 10) {
+                hasspoken = true //Prathamesh
+            }
+           
+
+
             resultevent = true;
             __log("in on result");
             
             if (stoprecord) {
                //for (var i = 0; i < 100; i++) {
                 console.log("stopped recording" + final_transcript);
-                    responseCallNico(final_transcript);
+                    responseCallNico(final_transcript); //Prathamesh
                 //}
             }
             
@@ -248,7 +255,7 @@
             __log('Calling START record');
             console.log("Calling start recording");
             writeLog("Calling start recording");
-
+            //hasspoken=true //Prathamesh
             // reset ASR variables
             resultevent = false;
             stoprecord = false;
@@ -256,6 +263,9 @@
             recognition.start();
             ignore_onend = false;
             start_timestamp = event.timeStamp;
+            //document.getElementById("NextProblem").style.visibility = "visible";      // visible //Prathamesh
+
+
         }
 
 
@@ -267,13 +277,14 @@
             stoprecord = true;
 
             recognition.stop();
-
             if (resultevent) {
                 responseCallNico(final_transcript);
                 stoprecord = false;
             }
             console.log("called stop recording");
             writeLog("called stop recording");
+            console.log(final_transcript);
+           
             createDownloadLink(sendBlob);
             recorder.clear();
         }
@@ -438,6 +449,15 @@
                         }
                         newTable.appendChild(trheader);
                     }
+
+                    //Added snippet to check if user has actually spoken before going to the next question
+                    if ((step == maxSteps) && hasspoken) {
+                        //console.log("Prathamesh in recognition.onresult()")
+                        document.getElementById("NextProblem").style.visibility = "visible";      // visible //Prathamesh
+
+                    }
+
+
                     
                     // Start at i = 2 because in Json, first row is data, second row is header info so 3rd row (i = 2) actual data
                     for (var i = 2; i < data.length; i++) {
@@ -539,7 +559,15 @@
                         document.getElementById("priorStepText").style.visibility = "visible";
                         document.getElementById("nextStepButton").style.visibility = "hidden";   // hidden
                         document.getElementById("nextStepText").style.visibility = "hidden";
-                        document.getElementById("NextProblem").style.visibility = "visible";      // visible
+                        //Prathamesh starts
+                        if (hasspoken) {
+                            document.getElementById("NextProblem").style.visibility = "visible";      // visible
+                        }
+                        else {
+                            document.getElementById("NextProblem").style.visibility = "hidden";  
+                        }
+                        //Prathamesh ends
+                            
 
                     }
                     else if (parseInt(step, 10) > 1) {
@@ -602,6 +630,7 @@
         }
 
         function NextStep_Click() {
+
             clearTimeout(timer);
             __log("next step button clicked");
             console.log("next step button clicked");
@@ -637,6 +666,7 @@
         }
 
         function PriorStep_Touch(evt) {
+            hasspoken = false
             clearTimeout(timer);
             evt.preventDefault();
             __log("prior step button clicked");
@@ -672,6 +702,7 @@
         }
 
         function NextStep_Touch(evt) {
+            hasspoken = false
             clearTimeout(timer);
             evt.preventDefault();
             __log("next step button clicked");
@@ -707,6 +738,8 @@
         }
 
         function Next_Problem() {
+            hasspoken = false //Prathamesh
+            alert("Good Job! Continue helping me solve problems") //1. change it to overlay/modal 
             clearTimeout(timer);
             __log("new problem button clicked");
             
@@ -721,7 +754,7 @@
             $(document).ajaxStop(function () {
                 $("#thinking").css("display", "none");
             });
-
+             
             $.ajax({
                 url: "../handlers/UpdateStep.ashx",
                 type: 'POST',
@@ -746,7 +779,7 @@
 
         // Window loading initializations
         window.onload = function init() {
-            var hasspoken=false //Prathamesh
+            hasspoken = false //Prathamesh
             var touchzone = document.getElementById('touchzone');
             //touchzone.addEventListener("touchstart", touchHandlerDown, false);
             //touchzone.addEventListener("touchend", touchHandlerUp, false);
