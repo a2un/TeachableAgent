@@ -65,7 +65,7 @@ namespace Nico.handlers
                         nicoResponse = ResponseGeneration.NicoResponse(path, problemStep, 0, "next step", now, page, userid, useraudio);
                         SQLUserState.UpdateSpeakerState(userid, "", "", 0, problemStep, now, clickstep, numautoresponses);                            // Write out speaker state info
                         SQLNicoState.UpdateNicoState(userid, nicoResponse, problemStep, now);                                       // Write out Nico's state info & update problem/step
-
+                        response = Convert.ToString(SQLUserState.getUtteranceCount(userid, problem, "statement"));
                         SQLProblemStepTracker.UpdateProbStep(userid, sessionid, problem, nextStep, problemimgkey, newanswerkey, step, numautoresponses, numturns);
 
                         break;
@@ -79,7 +79,7 @@ namespace Nico.handlers
                         nicoResponse = ResponseGeneration.NicoResponse(path, problemStep, 0, "prior step", now, page, userid, useraudio);
                         SQLUserState.UpdateSpeakerState(userid, "", "", 0, problemStep, now, clickstep, numautoresponses);                            // Write out speaker state info
                         SQLNicoState.UpdateNicoState(userid, nicoResponse, problemStep, now);                                       // Write out Nico's state info & update problem/step
-
+                        response = Convert.ToString(SQLUserState.getUtteranceCount(userid, problem, "statement"));
                         SQLProblemStepTracker.UpdateProbStep(userid, sessionid, problem, priorStep, problemimgkey, answerKey, newanswer, numautoresponses, numturns);
 
                         break;
@@ -100,9 +100,9 @@ namespace Nico.handlers
                             clickstep = "problem_" + problem.ToString() + "_" + nextproblem.ToString();
 
                             nicoResponse = ResponseGeneration.NicoResponse(path, problemStep, 0, "problem start", now, page, userid, useraudio);
+                            response = Convert.ToString(SQLUserState.getUtteranceCount(userid, problem, "statement"));
                             SQLUserState.UpdateSpeakerState(userid, "", "", 0, problemStep, now, clickstep, numautoresponses);                            // Write out speaker state info
                             SQLNicoState.UpdateNicoState(userid, nicoResponse, problemStep, now);                                       // Write out Nico's state info & update problem/step
-
 
                             SQLProblemStepTracker.UpdateProbStep(userid, sessionid, nextproblem, step, problemimgkey, answerKey, newanswer, numautoresponses, numturns);
                         }

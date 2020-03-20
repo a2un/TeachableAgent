@@ -76,7 +76,7 @@ namespace Nico.handlers
 
             // response to transmit back to caller
             string transResponse = "";
-
+            bool updatedOnce = true;
 
             // Variables important to the speaker's state
             string audioFile = path + "data\\userAudio\\blob.wav";
@@ -124,6 +124,7 @@ namespace Nico.handlers
                     speakerSpoke = 0;
                     clickstep = "problem start";
                     step = 1;
+                    updatedOnce = false;
                 }
                 else if (transcript == "no response") // TODO where does the "no response" generated, does that important?
                 {
@@ -183,10 +184,15 @@ namespace Nico.handlers
                     Debug.WriteLine("di: transResponse is : " + nicoResponse);
                 }
 
-
+                if (!updatedOnce)
+                {
+                    SQLUserState.setSessionOffset();
+                    updatedOnce = true;
+                }
                 SQLUserState.UpdateSpeakerState(userid, dialogueAct, transcript, speakerSpoke, problemStep, timeStart, clickstep, numAutoResponses);    // Write out speaker state info
                 SQLNicoState.UpdateNicoState(userid, nicoResponse, problemStep, timeStart);                                           // Write out Nico's state info & update problem/step
-
+                
+                    
 
                 // Nico response: string => Nico's response, int is the movement code, the boolean indicates whether Nico answered the step
                 // To update the step, we check if Nico answered the question.

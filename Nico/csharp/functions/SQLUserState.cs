@@ -60,7 +60,61 @@ namespace Nico.csharp.functions
             }
         }
 
+        public static void setSessionOffset()
+        {
+            string connectionString = null;
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = null;
+            connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            sql = "IF Object_ID('dbo.current_session') IS NOT NULL DROP VIEW dbo.current_session;";
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            cmd.ExecuteNonQuery();
+            sql = "CREATE VIEW dbo.current_session AS SELECT TOP(1) DateTime FROM dbo.User_State ORDER BY DateTime DESC;";
+            cmd = new SqlCommand(sql, connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
 
+        public static int getUtteranceCount(string userid,int problemID,string dialogueAct)
+        {
+            int utterCount = 0;
+            try
+            {
+                string connectionString = null;
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql = null;
+                connectionString = ConfigurationManager.ConnectionStrings["NicoDB"].ConnectionString;
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                sql = "SELECT convert(varchar(20),DateTime,100) FROM dbo.current_session";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+
+                String time = Convert.ToString(cmd.ExecuteScalar());
+                sql = "SELECT COUNT(*) FROM dbo.User_State WITH (NOLOCK) WHERE DialogueAct = @dialogueAct AND UserID = @userid AND DateTime >= @time AND ProblemID = @problemID " +
+                    "GROUP BY ProblemID ORDER BY ProblemID DESC ";
+
+                cmd = new SqlCommand(sql, connection);
+                
+
+                cmd.Parameters.AddWithValue("@dialogueAct", dialogueAct);
+                cmd.Parameters.AddWithValue("@userid", userid);
+                cmd.Parameters.AddWithValue("@time", time);
+                cmd.Parameters.AddWithValue("@problemID", problemID);
+                utterCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                connection.Close();
+                
+            }
+            catch (Exception error)
+            {
+                SQLLog.InsertLog(DateTime.Now, error.Message, error.ToString(), "SQLUserState getUtteranceCount", 0, userid);
+            }
+            return utterCount;
+        }
 
     }
 }
