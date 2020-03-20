@@ -82,6 +82,8 @@
 
         <br />
 
+        <dialog id="utteranceDialog">This is a dialog window</dialog>
+
     </div>
     <link rel="stylesheet" runat="server" media="screen" href="../content/bootstrap.css" />
 
@@ -737,9 +739,19 @@
             return false;
         }
 
+        function showModal(text) {
+            //alert(text);
+            document.getElementById("utteranceDialog").innerHTML = text;
+            document.getElementById("utteranceDialog").showModal();
+
+            window.setTimeout(function () {
+                document.getElementById("utteranceDialog").close();
+            }, 3000);
+        }
+
         function Next_Problem() {
             hasspoken = true; //Prathamesh
-            alert("Good Job! Continue helping me solve problems") //1. change it to overlay/modal 
+            //showModal("Good Job! Continue helping me solve problems") //1. change it to overlay/modal 
             clearTimeout(timer);
             __log("new problem button clicked");
             
@@ -763,6 +775,7 @@
                 processData: false,
                 success: function (endSession) {
                     console.log("next problem arun", endSession);
+                    showModal("Good Job! Continue helping me solve problems <br /> number of utterances:&nbsp;&nbsp;&nbsp;&nbsp;" + endSession);
                     updateTable(endSession);
                     window.clearTimeout(timer);
                     timer = window.setTimeout(function () { responseCallNico("no response"); }, 65000);
