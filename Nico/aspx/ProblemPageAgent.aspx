@@ -559,18 +559,25 @@
                     if (parseInt(step, 10) == maxSteps) {
                         document.getElementById("priorStepButton").style.visibility = "visible";  // visible
                         document.getElementById("priorStepText").style.visibility = "visible";
+                        document.getElementById("nextStepButton").style.visibility = "visible";   // hidden
+                        document.getElementById("nextStepText").style.visibility = "visible";
+                        //Prathamesh starts
+                        
+                            
+
+                    }
+                    if (parseInt(step, 10) > maxSteps) {
+                        document.getElementById("priorStepButton").style.visibility = "visible";  // visible
+                        document.getElementById("priorStepText").style.visibility = "visible";
                         document.getElementById("nextStepButton").style.visibility = "hidden";   // hidden
                         document.getElementById("nextStepText").style.visibility = "hidden";
-                        //Prathamesh starts
                         if (hasspoken) {
                             document.getElementById("NextProblem").style.visibility = "visible";      // visible
                         }
                         else {
-                            document.getElementById("NextProblem").style.visibility = "hidden";  
+                            document.getElementById("NextProblem").style.visibility = "hidden";
                         }
                         //Prathamesh ends
-                            
-
                     }
                     else if (parseInt(step, 10) > 1) {
                         document.getElementById("priorStepButton").style.visibility = "visible";  // visible
